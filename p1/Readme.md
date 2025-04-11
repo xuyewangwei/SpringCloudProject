@@ -129,3 +129,57 @@ data:
 *获取当前用户信息*
 post /api/users/whoiam
 请求头:需要Jwt token
+
+响应：
+```
+code
+message
+data
+
+token:
+```
+*更新用户信息*
+patch /api/users/me
+patch用于更新部分信息
+> 当用户需要修改对象所有数据时，应当使用PUT。
+> 当用户只需要修改对象部分数据时，应当使用PATCH。
+
+请求头：需要JWT token
+请求参数：
+把需要更新的参数放上去
+响应：
+code
+message
+data
+
+*上传头像*
+post /api/upload/img
+请求:
+使用multipart/form-data格式
+文件字段名file
+支持的文件类型
+jpg,jpeg,png
+最大50MB
+
+响应
+```
+code:
+message
+data{
+  url:
+}
+```
+
+*搜索用户*
+get api/search/users
+请求:
+keyword
+page:
+pagesize
+响应:
+code:
+message:
+data{
+  usersdata
+}
+
